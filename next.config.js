@@ -1,4 +1,6 @@
-// This plugin makes Next.js work on Netlify
-const { withNetlify } = require('@netlify/next');
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Add custom Next.js config here if needed
+};
 
-module.exports = withNetlify();
+module.exports = nextConfig;
