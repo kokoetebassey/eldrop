@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import styles from "../getstarted/getstarted.module.css";
 
 
@@ -49,7 +50,7 @@ export default function VerifyPage() {
   return (
      <div className={styles.centresignback}>
         <div className={styles.signuplogo}>
-          <img src="/images/sigupLog.png" alt="Eldrop Logo" style={{ width: "204px", height: "335px" }} />
+          <Image src="/images/sigupLog.png" alt="Eldrop Logo" width={204} height={335} />
         </div>
         <div className={styles.inputer}>
 
@@ -84,7 +85,7 @@ export default function VerifyPage() {
     
     </div>
      <div className={styles.signuplogobottom}>
-      <img src="/images/signbottom.png" alt="Eldrop Logo" style={{  width: "193px", height: "393px" }} />
+      <Image src="/images/signbottom.png" alt="Eldrop Logo" width={193} height={393} />
     </div>
     </div>
   );

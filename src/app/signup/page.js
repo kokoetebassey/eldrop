@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import styles from "../getstarted/getstarted.module.css";
 
 
@@ -43,7 +44,7 @@ export default function SignupPage() {
     <div className={styles.signback}>
     <div className={styles.centresignback}>
     <div className={styles.signuplogo}>
-      <img src="/images/sigupLog.png" alt="Eldrop Logo" style={{ width: "204px", height: "335px" }} />
+      <Image src="/images/sigupLog.png" alt="Eldrop Logo" width={204} height={335} />
     </div>
 
     <div className={styles.inputer}>
@@ -69,14 +70,14 @@ export default function SignupPage() {
       {success && <p style={{ color: "green" }}>{success}</p>}
       <p style={{ marginTop: 16, textAlign: "center", color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
         Already have an account? <a href="/login" style={{ color: '#f3ad04', textDecoration: 'underline' }}>
-      <img src="/images/rightArrow.png" alt="Eldrop Logo" style={{ width: "20px", height: "20px" }} />
+      <Image src="/images/rightArrow.png" alt="Eldrop Logo" width={20} height={20} />
         </a>
       </p>
     </div>
     
     </div>
 <div className={styles.signuplogobottom1}>
-      <img src="/images/signbottom.png" alt="Eldrop Logo" style={{ width: "193px", height: "393px" }} />
+      <Image src="/images/signbottom.png" alt="Eldrop Logo" width={193} height={393} />
     </div>
     </div>
     </div>

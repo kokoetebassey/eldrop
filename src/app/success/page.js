@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import styles from "../getstarted/getstarted.module.css";
 
 
@@ -20,7 +21,7 @@ export default function SuccessPage() {
     <> 
     <div className={styles.successlogoCenter}>
     <div className={styles.successlogo}>
-            <img className={styles.successImage} src="/images/success.png" alt="Eldrop Logo" style={{  width: "40px", height: "40px" }} />
+            <Image className={styles.successImage} src="/images/success.png" alt="Eldrop Logo" width={40} height={40} />
     </div>
     </div>
     <div className={styles.centresignbacksuccess} >
@@ -30,10 +31,10 @@ export default function SuccessPage() {
         <button className={styles.inputBtn} style={{ width: 180, fontSize: 18 }} onClick={handleContinue}>Continue</button>
       </div>
          <div className={styles.signuplogobottom}>
-            <img src="/images/signbottom.png" alt="Eldrop Logo" style={{  width: "193px", height: "393px" }} />
+            <Image src="/images/signbottom.png" alt="Eldrop Logo" width={193} height={393} />
     </div>
     </div>
     </>
   );
 
-} 
+}

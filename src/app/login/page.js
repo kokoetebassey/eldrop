@@ -1,11 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import styles from "../getstarted/getstarted.module.css";
-
-
-
-
 
 export default function LoginPage() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -30,10 +27,10 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
     setSuccess("");
-    const res = await fetch("/api/auth/login", { 
+    const res = await fetch("/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form)
+      body: JSON.stringify(form),
     });
     const data = await res.json();
     if (res.ok) {
@@ -44,39 +41,91 @@ export default function LoginPage() {
 
   return (
     <div className={styles.signback}>
-    <div className={styles.centresignback}>
-    <div className={styles.signuplogo}>
-      <img src="/images/sigupLog.png" alt="Eldrop Logo" style={{ width: "204px", height: "335px" }} />
-    </div>
+      <div className={styles.centresignback}>
+        <div className={styles.signuplogo}>
+          <Image
+            src="/images/sigupLog.png"
+            alt="Eldrop Logo"
+            width={204}
+            height={335}
+          />
+        </div>
 
+        <div className={styles.inputer}>
+          <div className={styles.signcenter}>
+            <h1>Login</h1>
+            <form className={styles.centreIput} onSubmit={handleSubmit}>
+              <input
+                className={styles.signupInput}
+                name="email"
+                type="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                style={{ width: "100%", marginBottom: 8 }}
+              />
+              <hr className={styles.hr} />
+              <input
+                className={styles.signupInput}
+                name="password"
+                type="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={handleChange}
+                required
+                style={{ width: "100%", marginBottom: 8 }}
+              />
+              <hr className={styles.hr} />
+              <button
+                className={styles.inputBtn}
+                type="submit"
+                style={{ width: "100%", padding: 8 }}
+              >
+                Login
+              </button>
+            </form>
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            {success && <p style={{ color: "green" }}>{success}</p>}
 
-      <div className={styles.inputer}>
-
-
-    <div className={styles.signcenter}>
-
-      <h1>Login</h1>
-      <form className={styles.centreIput} onSubmit={handleSubmit}>
-        <input className={styles.signupInput} name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} required style={{ width: "100%", marginBottom: 8 }} />
-        <hr className={styles.hr}/>
-        <input className={styles.signupInput} name="password" type="password" placeholder="Password" value={form.password} onChange={handleChange} required style={{ width: "100%", marginBottom: 8 }} />
-        <hr className={styles.hr}/>
-        <button className={styles.inputBtn} type="submit" style={{ width: "100%", padding: 8 }}>Login</button>
-      </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {success && <p style={{ color: "green" }}>{success}</p>}
-
-      <p style={{ marginTop: 16, textAlign: "center", color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-        Don't have an account? <a href="/signup" style={{ color: '#f3ad04', textDecoration: 'underline' }}>
-      <img src="/images/rightArrow.png" alt="Eldrop Logo" style={{ width: "20px", height: "20px" }} />
-        </a>
-      </p>
-    </div>
-    </div>
-       <div className={styles.signuplogobottom}>
-      <img src="/images/signbottom.png" alt="Eldrop Logo" style={{  width: "193px", height: "393px" }} />
-    </div>
-    </div>
+            <p
+              style={{
+                marginTop: 16,
+                textAlign: "center",
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+              }}
+            >
+              Don&apos;t have an account?{" "}
+              <a
+                href="/signup"
+                style={{
+                  color: "#f3ad04",
+                  textDecoration: "underline",
+                }}
+              >
+                <Image
+                  src="/images/rightArrow.png"
+                  alt="Eldrop Logo"
+                  width={20}
+                  height={20}
+                />
+              </a>
+            </p>
+          </div>
+        </div>
+        <div className={styles.signuplogobottom}>
+          <Image
+            src="/images/signbottom.png"
+            alt="Eldrop Logo"
+            width={193}
+            height={393}
+          />
+        </div>
+      </div>
     </div>
   );
 }
