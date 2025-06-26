@@ -44,6 +44,7 @@ export default async function handler(req, res) {
     await sendVerificationEmail(email, verificationCode);
     return res.status(201).json({ message: "User registered successfully. Please check your email for the verification code." });
   } catch (err) {
+    console.error(err);
     return res.status(500).json({ error: "Server error" });
   }
 }
