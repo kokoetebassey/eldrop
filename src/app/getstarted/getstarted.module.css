@@ -134,19 +134,21 @@ display: flex;
 }
 
 .getStartedBtn {
-     color: #f3ad04;
-    cursor: pointer;
+    color: #f3ad04;
     background: #fff;
     border: none;
     border-radius: 8px;
-    position: absolute;
-    padding: 4px 43px;
-    margin-top: 225px;
+    position: relative;
+    padding: 8px 43px;
+    margin: 32px auto 0 auto;
     font-size: 23px;
     font-weight: 600;
     text-decoration: none;
     transition: background .2s;
     box-shadow: 0 4px 24px #00000026;
+    z-index: 10;
+    width: fit-content;
+    display: block;
 }
 .inputBtn {
     color: #f3ad04;
@@ -165,9 +167,9 @@ display: flex;
     margin-bottom: 35px;
 }
 
-.getStartedBtn:hover {
+/* .getStartedBtn:hover {
   background: #1d4ed8;
-}
+} */
 
 .signcenter h1{
        color: #fff;
