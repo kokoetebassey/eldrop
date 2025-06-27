@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./getstarted/getstarted.module.css";
 
 
@@ -85,9 +86,9 @@ export default function GetStarted() {
 				
 				<p className={styles.subtitle}>{slides[current].subtitle}</p>
 				{current === slides.length - 1 && (
-					<a href="/signup" className={styles.getStartedBtn}>
+					<Link href="/signup" className={styles.getStartedBtn}>
 						GET STARTED
-					</a>
+					</Link>
 				)}
 				<div
 					className={styles.dotsContainer}
