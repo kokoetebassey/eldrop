@@ -86,9 +86,11 @@ export default function GetStarted() {
 				
 				<p className={styles.subtitle}>{slides[current].subtitle}</p>
 				{current === slides.length - 1 && (
+					<button>
 					<Link href="/signup" className={styles.getStartedBtn}>
 						GET STARTED
 					</Link>
+					</button>
 				)}
 				<div
 					className={styles.dotsContainer}

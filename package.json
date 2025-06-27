@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@netlify/next": "^1.4.9",
+    "@next/bundle-analyzer": "^15.3.4",
     "bcryptjs": "^3.0.2",
     "mongodb": "^6.17.0",
     "next": "15.3.4",
