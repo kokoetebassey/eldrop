@@ -197,14 +197,14 @@ display: flex;
     width: 100%;
 }
 .inputer{
-      position: relative;
-    margin-right: 40px;
-    top: -261px;
-        z-index: 1111111;
+      z-index: 1111111;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    text-align: center;
     margin-left: 40px;
+    margin-right: 40px;
+    position: relative;
+    top: -166px;
 }
 .centresignback{
       background-color: #000000b3;
