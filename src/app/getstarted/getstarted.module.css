@@ -101,7 +101,7 @@ display: flex;
 
 .centerContent {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,9 +146,10 @@ display: flex;
     text-decoration: none;
     transition: background .2s;
     box-shadow: 0 4px 24px #00000026;
-    z-index: 10;
+    z-index: 9999;
     width: fit-content;
     display: block;
+    pointer-events: auto;
 }
 .inputBtn {
     color: #f3ad04;
