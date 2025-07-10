@@ -44,7 +44,8 @@ export default function SignupPage() {
     <div className={styles.signback}>
     <div className={styles.centresignback}>
     <div className={styles.signuplogo}>
-      <Image src="/images/sigupLog.png" alt="Eldrop Logo" width={204} height={335} />
+      <Image  src="https://ik.imagekit.io/4f4lpmjjy/public/images/sigupLog.png?updatedAt=1751890900634"
+ alt="Eldrop Logo" width={204} height={335} />
     </div>
 
     <div className={styles.inputer}>
@@ -70,14 +71,15 @@ export default function SignupPage() {
       {success && <p style={{ color: "green" }}>{success}</p>}
       <p style={{ marginTop: 16, textAlign: "center", color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
         Already have an account? <a href="/login" style={{ color: '#f3ad04', textDecoration: 'underline' }}>
-      <Image src="/images/rightArrow.png" alt="Eldrop Logo" width={20} height={20} />
+      <Image src="https://ik.imagekit.io/4f4lpmjjy/public/images/rightArrow.png?updatedAt=1751890900602"
+ alt="Eldrop Logo" width={20} height={20} />
         </a>
       </p>
     </div>
     
     </div>
 <div className={styles.signuplogobottom1}>
-      <Image src="/images/signbottom.png" alt="Eldrop Logo" width={193} height={393} />
+      <Image src="https://ik.imagekit.io/4f4lpmjjy/public/images/signbottom.png?updatedAt=1751890900596" alt="Eldrop Logo" width={193} height={393} />
     </div>
     </div>
     </div>

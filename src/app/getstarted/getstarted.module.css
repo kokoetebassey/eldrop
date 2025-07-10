@@ -1,7 +1,7 @@
 .background {
   min-height: 100vh;
   width: 100vw;
-  background-image: url('/backgrougSigin.png');
+  background-image: url('https://ik.imagekit.io/4f4lpmjjy/public/backgrougSigin.png?updatedAt=1751890897993');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -11,7 +11,7 @@
 .signback {
   min-height: 100vh;
   width: 100vw;
-  background-image: url('/sign.png');
+  background-image: url('https://ik.imagekit.io/4f4lpmjjy/public/sign.png?updatedAt=1751890902164');
   background-size: cover;
   background-position: center;
   position: relative;

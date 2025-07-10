@@ -4,7 +4,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withBundleAnalyzer({
-reactStrictMode: true,
+  reactStrictMode: true,
+  images: {
+    domains: ['ik.imagekit.io'],
+  },
 });
 
 module.exports = nextConfig;

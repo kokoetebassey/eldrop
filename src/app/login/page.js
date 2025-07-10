@@ -44,7 +44,7 @@ export default function LoginPage() {
       <div className={styles.centresignback}>
         <div className={styles.signuplogo}>
           <Image
-            src="/images/sigupLog.png"
+            src="https://ik.imagekit.io/4f4lpmjjy/public/images/sigupLog.png?updatedAt=1751890900634"
             alt="Eldrop Logo"
             width={204}
             height={335}
@@ -108,7 +108,7 @@ export default function LoginPage() {
                 }}
               >
                 <Image
-                  src="/images/rightArrow.png"
+                  src="https://ik.imagekit.io/4f4lpmjjy/public/images/rightArrow.png?updatedAt=1751890900602"
                   alt="Eldrop Logo"
                   width={20}
                   height={20}
@@ -119,7 +119,7 @@ export default function LoginPage() {
         </div>
         <div className={styles.signuplogobottom}>
           <Image
-            src="/images/signbottom.png"
+            src="https://ik.imagekit.io/4f4lpmjjy/public/images/signbottom.png?updatedAt=1751890900596"
             alt="Eldrop Logo"
             width={193}
             height={393}

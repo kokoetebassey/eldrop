@@ -60,7 +60,7 @@ export default function GetStartedContent() {
       <div className={styles.topLeftImage}> 
         <Image
            className={styles.topLeftImageMain}
-          src="/images/eldroWhite.png"
+          src="https://ik.imagekit.io/4f4lpmjjy/public/images/eldroWhite.png?updatedAt=1751890895364"
           alt="Top Left Decoration"
           width={100}
           height={100}
@@ -69,7 +69,7 @@ export default function GetStartedContent() {
       <div className={styles.topLeftImage}> 
         <Image
            className={styles.topLeftLogo}
-          src="/images/eldroplogo.png"
+          src="https://ik.imagekit.io/4f4lpmjjy/public/images/eldropLogo.png?updatedAt=1751890896115"
           alt="Top Left Decoration"
           width={100}
           height={100}
@@ -121,7 +121,7 @@ export default function GetStartedContent() {
 	<div className={styles.bottomLeftImage}> 
         <Image
            className={styles.bottomyellow}
-          src="/images/yellow.png"
+          src="https://ik.imagekit.io/4f4lpmjjy/public/images/yellow.png?updatedAt=1751890901329"
           alt="bottm Left Decoration"
           width={100}
           height={100}
@@ -131,7 +131,7 @@ export default function GetStartedContent() {
 	<div className={styles.bottomLeftImagegreen}> 
         <Image
            className={styles.bottomgreen}
-          src="/images/green.svg"
+          src="https://ik.imagekit.io/4f4lpmjjy/public/images/green.svg?updatedAt=1751890896224"
           alt="bottom Left Decoration"
           width={200}
           height={300}
