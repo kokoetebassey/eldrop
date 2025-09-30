@@ -26,7 +26,4 @@ export async function GET(req) {
     balance: user.balance || 0
   });
 }
-    rating: user.rating || 0,
-    balance: user.balance || 0
-  });
-}
+
