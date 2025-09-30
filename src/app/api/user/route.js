@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]/route';
-import clientPromise from '../../../../lib/mongodb';
+import { authOptions } from '../../auth/[...nextauth]/route'; // Adjust path if needed
+import clientPromise from '../../../lib/mongodb'; // Adjust path if needed
 
 export async function GET(req) {
   const session = await getServerSession(authOptions);
@@ -26,4 +26,3 @@ export async function GET(req) {
     balance: user.balance || 0
   });
 }
-
