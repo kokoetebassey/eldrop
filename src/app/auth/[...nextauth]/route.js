@@ -1,3 +1,4 @@
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 // Minimal NextAuth config export for build to succeed
@@ -26,3 +27,8 @@ export const authOptions = {
   }
   // ...add more options as needed...
 };
+
+// Next.js API route handler for NextAuth
+const handler = NextAuth(authOptions);
+
+export { handler as GET, handler as POST };
