@@ -53,7 +53,7 @@ export default function AddToCartPage() {
             <div className={styles.modalProfile}>
               <img src={user?.avatar || "/avatar.png"} alt="Avatar" className={styles.avatar} />
               <div>
-                <div className={styles.userName_modal}>
+                <h1 className={styles.userName_modal}>
                   {loading
                     ? "Loading..."
                     : error
@@ -61,7 +61,8 @@ export default function AddToCartPage() {
                       : user
                         ? user.username || "No Username"
                         : "Guest"}
-                </div>
+                        <span className={styles.myAccount}>my Account</span>
+                </h1>
                 <div className={styles.flex_image_text}>
                   <div className={styles.userRating}>
                     {user && !loading
@@ -71,12 +72,12 @@ export default function AddToCartPage() {
                       : null}
                     {user && !loading
                       ? (typeof user.rating === "number" ? user.rating : 0)
-                      : null}
+                      : null} rating
                   </div>
                   <div className={styles.userBalance}>
                     Balance: <b>
                       {user && !loading
-                        ? `N${typeof user.balance === "number" ? user.balance.toLocaleString() : "0"}`
+                        ? `N${typeof user.balance === "number" ? user.balance.toLocaleString() : "0"}1500`
                         : ""}
                     </b>
                   </div>

@@ -101,7 +101,7 @@ export default function Carousel() {
      <div className={styles.carouselDots}>
         {carouselData.map((_, idx) => (
           <span
-            key={idx}rez
+            key={idx}
             className={idx === current ? styles.carouselDotActive : styles.carouselDot}
           />
         ))}

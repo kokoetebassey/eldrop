@@ -13,7 +13,7 @@ export default function CartPage() {
       {/* Navbar */}
       <div className="cartpage-navbar">
       <div className="cartpage-navbar_center">
-        <Link href="/addtocart" className="cartpage-navbar-link">
+        <Link href="/home" className="cartpage-navbar-link">
           <span className="cartpage-navbar-arrow">&lt;</span>
           <span className="cartpage-navbar-text">Continue Shopping</span>
         </Link>
@@ -28,7 +28,7 @@ export default function CartPage() {
      
         <h3>Subtotal</h3>
         <div>
-          ${getTotalPrice().toFixed(2)}
+          N{getTotalPrice().toFixed(2)}
         </div>
       </div>
       {cart.length === 0 ? (
