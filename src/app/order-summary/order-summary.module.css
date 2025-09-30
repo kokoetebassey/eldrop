@@ -1,0 +1,57 @@
+.container {
+  max-width: 500px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.imageWrapper {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.image {
+  border-radius: 12px;
+}
+
+.warningBox {
+  background: #fffbe6;
+  color: #b26a00;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.summaryCard {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.totalRow {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.processBtn {
+  width: 100%;
+  padding: 12px;
+  background: #f3ad04;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 18px;
+}

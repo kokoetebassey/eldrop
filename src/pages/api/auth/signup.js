@@ -40,7 +40,15 @@ export default async function handler(req, res) {
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     const verificationCode = generateCode();
-    await users.insertOne({ username, email, password: hashedPassword, verified: false, verificationCode });
+    await users.insertOne({
+      username,
+      email,
+      password: hashedPassword,
+      verified: false,
+      verificationCode,
+      rating: 0,      // Add default rating
+      balance: 0.0    // Add default balance
+    });
     await sendVerificationEmail(email, verificationCode);
     return res.status(201).json({ message: "User registered successfully. Please check your email for the verification code." });
   } catch (err) {
