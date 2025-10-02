@@ -84,6 +84,12 @@ export default function AddToCartPage() {
                 </div>
               </div>
             </div>
+
+
+            
+
+
+
             <div className={styles.modalMenu}>
               <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaWallet /> Wallet</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
@@ -94,12 +100,24 @@ export default function AddToCartPage() {
               <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaBell /> Notification</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
               <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaQuestionCircle /> FAQ</span> <FaChevronRight /></div>
-                           < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
+             < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
               <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaSignOutAlt /> Logout</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
               <div className={styles.menuItemDanger} style={{display:'flex', justifyContent:'space-between', alignItems:'center', gap: '87px', whiteSpace: 'nowrap'}}><span><FaTrash /> Delete Account</span> <FaChevronRight /></div>
             </div>
+
+
+            <div className={styles.modalProfile_vendur}>
+            <div className={styles.vendur_text}>
+                    <h2>Become a vendor</h2>
+                    <p>Earn commissions by helping customers shop for food items in the market.</p>
+                    
           </div>
+          </div>
+          </div>
+
+
+          
         </div>
       )}
       {/* Notification */}
@@ -178,6 +196,13 @@ export default function AddToCartPage() {
         ))}
         {filtered.length === 0 && <p>No products found.</p>}
       </div>
+
+
+
+      
+
+
+
     </div>
   );
 }
