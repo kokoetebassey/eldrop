@@ -14,12 +14,19 @@ export default function AddToCartPage() {
   const [search, setSearch] = useState('');
   const { cart, addToCart, notification } = useCart();
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
 
-
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filtered = products.filter((p) =>
     p.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  if (!mounted) {
+    return <div className={styles['addtocart-container']}>Loading...</div>;
+  }
 
   return (
     <div className={styles['addtocart-container']}>

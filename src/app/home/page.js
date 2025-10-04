@@ -19,8 +19,10 @@ export default function AddToCartPage() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const loggedInUser = localStorage.getItem('loggedInUser');
     console.log('loggedInUser from localStorage:', loggedInUser);
     if (loggedInUser) {
@@ -54,7 +56,9 @@ export default function AddToCartPage() {
     p.name.toLowerCase().includes(search.toLowerCase())
   );
 
-
+  if (!mounted) {
+    return <div className={styles['addtocart-container']}>Loading...</div>;
+  }
 
   return (
     <div className={styles['addtocart-container']}>

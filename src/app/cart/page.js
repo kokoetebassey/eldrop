@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCart } from '../CartContext';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,6 +7,16 @@ import './CartPage.css'; // Import the CSS file
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity, clearCart, getTotalPrice, notification } = useCart();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div className="cartpage-container">Loading...</div>;
+  }
+
 
   return (
     <div className="cartpage-container">

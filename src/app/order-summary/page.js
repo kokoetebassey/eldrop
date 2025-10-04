@@ -6,17 +6,17 @@ import { PaystackButton } from 'react-paystack';
 import { useState, useEffect } from 'react';
 import './OrderSummary.css';
 
-export const dynamic = 'force-dynamic';
-
 export default function OrderSummaryPage() {
   const { cart, getTotalPrice, clearCart } = useCart();
   const router = useRouter();
   const [user, setUser] = useState(null);
+  const [mounted, setMounted] = useState(false);
   const deliveryCost = 500;
   const publicKey = 'pk_test_456c484d3d9fe11a849a2f54c9033335dd0dc10b'; // Replace with your Paystack public key
   const amount = (getTotalPrice() + deliveryCost) * 100; // Paystack expects amount in kobo
 
   useEffect(() => {
+    setMounted(true);
     async function fetchUser() {
       try {
         const res = await fetch('/api/user');
@@ -33,7 +33,7 @@ export default function OrderSummaryPage() {
     fetchUser();
   }, []);
 
-  if (!user) {
+  if (!mounted || !user) {
     return <div className="order-summary-container">Loading...</div>;
   }
 
