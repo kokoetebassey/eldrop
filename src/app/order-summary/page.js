@@ -6,6 +6,8 @@ import { PaystackButton } from 'react-paystack';
 import { useState, useEffect } from 'react';
 import './OrderSummary.css';
 
+export const dynamic = 'force-dynamic';
+
 export default function OrderSummaryPage() {
   const { cart, getTotalPrice, clearCart } = useCart();
   const router = useRouter();
