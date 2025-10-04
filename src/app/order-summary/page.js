@@ -2,9 +2,14 @@
 import { useCart } from '../CartContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { PaystackButton } from 'react-paystack';
 import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import './OrderSummary.css';
+
+const PaystackButton = dynamic(
+  () => import('react-paystack').then(mod => mod.PaystackButton),
+  { ssr: false }
+);
 
 export default function OrderSummaryPage() {
   const { cart, getTotalPrice, clearCart } = useCart();
@@ -12,8 +17,8 @@ export default function OrderSummaryPage() {
   const [user, setUser] = useState(null);
   const [mounted, setMounted] = useState(false);
   const deliveryCost = 500;
-  const publicKey = 'pk_test_456c484d3d9fe11a849a2f54c9033335dd0dc10b'; // Replace with your Paystack public key
-  const amount = (getTotalPrice() + deliveryCost) * 100; // Paystack expects amount in kobo
+  const publicKey = 'pk_test_456c484d3d9fe11a849a2f54c9033335dd0dc10b';
+  const amount = (getTotalPrice() + deliveryCost) * 100;
 
   useEffect(() => {
     setMounted(true);
