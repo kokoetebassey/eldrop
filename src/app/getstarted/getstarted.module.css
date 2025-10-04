@@ -117,6 +117,38 @@ display: flex;
   font-weight: 700;
   margin-bottom: 24px;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .topLeftImageMain {
+    width: 150px;
+    height: 120px;
+  }
+  
+  .dotsContainer {
+    margin-right: 0;
+    justify-content: center;
+  }
+  
+  .signcenter h1 {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .inputer {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 .dotsContainer {
     gap: 19px;
     margin-top: 56px;

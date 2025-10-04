@@ -4,6 +4,19 @@
   background: #fff;
   min-height: 100vh;
   padding-bottom: 20px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .personal-info-container {
+    max-width: 100%;
+  }
+  
+  .personal-info-avatar-section {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 20px 10px;
+  }
 }
 
 .personal-info-header {
