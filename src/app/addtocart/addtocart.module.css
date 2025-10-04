@@ -348,17 +348,19 @@ z-index: 2;
 }
 
 .modal {
-  max-width: 350px;
-  height: 100vh;
-  background: #fff;
-  border-radius: 0 18px 18px 0;
-  box-shadow: 2px 0 24px rgba(0,0,0,0.08);
-  padding: 24px 18px;
-  position: relative;
-  animation: slideIn 0.4s cubic-bezier(.68,-0.55,.27,1.55);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+     background: #fff;
+    border-radius: 0 18px 18px 0;
+    flex-direction: column;
+    gap: 24px;
+    /* max-width: 376px; */
+    width: 72%;
+    height: 100vh;
+    padding: 24px 18px;
+    animation: .4s 
+cubic-bezier(.68, -.55, .27, 1.55) addtocart-module__MhQzBq__slideIn;
+    display: flex;
+    position: relative;
+    box-shadow: 2px 0 24px #00000014;
 }
 
 @keyframes slideIn {

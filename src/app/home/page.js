@@ -9,7 +9,7 @@ import styles from '../addtocart/addtocart.module.css';
 import SearchIcon from '../addtocart/SearchIcon';
 import Carousel from '../addtocart/Carousel';
 import { useRouter } from 'next/navigation';
-import { FaWallet, FaGift, FaClipboardList, FaBell, FaQuestionCircle, FaSignOutAlt, FaTrash, FaStar, FaChevronRight } from "react-icons/fa";
+import { FaWallet, FaGift, FaClipboardList, FaBell, FaQuestionCircle, FaSignOutAlt, FaTrash, FaStar, FaChevronRight, FaUser } from "react-icons/fa";
 
 export default function AddToCartPage() {
   const [search, setSearch] = useState('');
@@ -21,21 +21,33 @@ export default function AddToCartPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    async function fetchUser() {
-      setLoading(true);
-      setError("");
-      try {
-        const res = await fetch("/api/auth/me"); // Make sure this endpoint exists and works
-        if (!res.ok) throw new Error("Failed to fetch user");
-        const data = await res.json();
-        setUser(data.user);
-      } catch (err) {
-        setError("Error loading user");
-        console.error("User fetch error:", err); // Add this for debugging
-      }
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    console.log('loggedInUser from localStorage:', loggedInUser);
+    if (loggedInUser) {
+      const userData = JSON.parse(loggedInUser);
+      console.log('Parsed user data:', userData);
+      setUser(userData);
       setLoading(false);
+    } else {
+      async function fetchUser() {
+        setLoading(true);
+        setError("");
+        try {
+          const res = await fetch("/api/user");
+          if (res.ok) {
+            const data = await res.json();
+            setUser(data);
+            localStorage.setItem('loggedInUser', JSON.stringify(data));
+          } else {
+            setError("Not logged in");
+          }
+        } catch (err) {
+          setError("Error loading user");
+        }
+        setLoading(false);
+      }
+      fetchUser();
     }
-    fetchUser();
   }, []);
 
   const filtered = products.filter((p) =>
@@ -57,9 +69,9 @@ export default function AddToCartPage() {
                   {loading
                     ? "Loading..."
                     : error
-                      ? error // Show actual error message
+                      ? error
                       : user
-                        ? user.username || "No Username"
+                        ? user.name || user.username || "Guest"
                         : "Guest"}
                         <span className={styles.myAccount}>my Account</span>
                 </h1>
@@ -72,12 +84,12 @@ export default function AddToCartPage() {
                       : null}
                     {user && !loading
                       ? (typeof user.rating === "number" ? user.rating : 0)
-                      : null} rating
+                      : null} 
                   </div>
                   <div className={styles.userBalance}>
                     Balance: <b>
                       {user && !loading
-                        ? `N${typeof user.balance === "number" ? user.balance.toLocaleString() : "0"}1500`
+                        ? `₦${typeof user.balance === "number" ? user.balance.toLocaleString() : "0"}1500`
                         : ""}
                     </b>
                   </div>
@@ -91,19 +103,20 @@ export default function AddToCartPage() {
 
 
             <div className={styles.modalMenu}>
-              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaWallet /> Wallet</span> <FaChevronRight /></div>
+              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer'}} onClick={() => router.push('/profile')}><span><FaUser /> Profile</span> <FaChevronRight /></div>
+              {/* <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaWallet /> Wallet</span> <FaChevronRight /></div> */}
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
-              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaGift /> Promo Codes</span> <FaChevronRight /></div>
+              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}   onClick={() => router.push('/discount')}><span><FaGift /> Promo Codes</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
-              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaClipboardList /> Orders</span> <FaChevronRight /></div>
+              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}  onClick={() => router.push('/cart')}><span><FaClipboardList /> Orders</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
-              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaBell /> Notification</span> <FaChevronRight /></div>
+              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer'}} onClick={() => router.push('/notifications')}><span><FaBell /> Notification</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
-              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaQuestionCircle /> FAQ</span> <FaChevronRight /></div>
+              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}} onClick={() => router.push('/faq')}><span><FaQuestionCircle /> FAQ</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
               <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaSignOutAlt /> Logout</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
-              <div className={styles.menuItemDanger} style={{display:'flex', justifyContent:'space-between', alignItems:'center', gap: '87px', whiteSpace: 'nowrap'}}><span><FaTrash /> Delete Account</span> <FaChevronRight /></div>
+              {/* <div className={styles.menuItemDanger} style={{display:'flex', justifyContent:'space-between', alignItems:'center', gap: '87px', whiteSpace: 'nowrap'}}><span><FaTrash /> Delete Account</span> <FaChevronRight /></div> */}
             </div>
 
 
@@ -172,7 +185,7 @@ export default function AddToCartPage() {
            
             <Image src={product.image} alt={product.name} width={100} height={100} className={styles['addtocart-image']} />
             <p className={styles['name-card']}>{product.name}</p>
-            <p className={styles['addtocart-title']}>N{product.price.toFixed(2)}</p>
+            <p className={styles['addtocart-title']}>₦{product.price.toFixed(2)}</p>
             <button onClick={() => addToCart(product)} className={styles['addtocart-btn']}>
               Add to Cart
             </button>
@@ -187,7 +200,7 @@ export default function AddToCartPage() {
             <Image src="/topRight.png" alt="Top Right" width={32} height={32} className={styles['card-topright-img']} />
             <Image src={product.image} alt={product.name} width={100} height={100} className={styles['addtocart-image']} />
             <p className={styles['name-card']}>{product.name}</p>
-            <p className={styles['addtocart-title']}>N{product.price.toFixed(2)}</p>
+            <p className={styles['addtocart-title']}>₦{product.price.toFixed(2)}</p>
             <button onClick={() => addToCart(product)} className={styles['addtocart-btn']}>
               Add to Cart
             </button>

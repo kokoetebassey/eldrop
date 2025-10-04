@@ -178,3 +178,24 @@ color: #ffb224;
     margin-right: 37px;
     margin-top: -31px;
 }
+
+.cartpage-checkout {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.cartpage-checkout-btn {
+background-color: #ffb224;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 90%;
+  max-width: 400px;
+}
+
+.cartpage-checkout-btn:hover {
+  background-color: #218838;
+}

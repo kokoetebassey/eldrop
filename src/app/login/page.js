@@ -33,7 +33,10 @@ export default function LoginPage() {
       body: JSON.stringify(form),
     });
     const data = await res.json();
+    console.log('Login response:', data);
     if (res.ok) {
+      console.log('Saving user to localStorage:', data.user);
+      localStorage.setItem('loggedInUser', JSON.stringify(data.user));
       setSuccess("Login successful!");
       setTimeout(() => router.push("/home"), 1000);
     } else setError(data.error || "Login failed");

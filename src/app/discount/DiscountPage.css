@@ -1,0 +1,389 @@
+/* app/discount/DiscountPage.css */
+.discount-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem 1rem;
+}
+
+.discount-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.discount-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.discount-header h1 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.discount-header p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main Promo Card */
+.main-promo-card {
+  background: linear-gradient(135deg, #f3ad04 0%, #1f2937 100%);
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.promo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .promo-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.promo-info {
+  flex: 1;
+}
+
+.discount-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.promo-info h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.promo-info h2::before {
+  content: "₦";
+  font-size: 2rem;
+  margin-right: 2px;
+}
+
+.promo-description {
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.fax-number {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.promo-code-section {
+  flex-shrink: 0;
+}
+
+.promo-code-box {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.code-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.promo-code {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin: 0.5rem 0;
+}
+
+.copy-button {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.copy-button:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* Promo Grid */
+.promo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .promo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .promo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.promo-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.category-badge {
+  background: #dcfce7;
+  color: #166534;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.valid-until {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.card-content {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.discount-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.discount-amount::before {
+  content: "₦";
+  font-size: 1.25rem;
+  margin-right: 2px;
+}
+
+.card-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.min-order {
+  font-size: 0.75rem;
+  color: #8b5cf6;
+  font-weight: 600;
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+}
+
+.code-display {
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  border: 2px dashed #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.code-label-small {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.promo-code-small {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.1em;
+  color: #1f2937;
+}
+
+.use-code-button {
+  width: 100%;
+ background: linear-gradient(135deg, #f3ad04 0%, #1f2937 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.use-code-button:hover {
+ background: linear-gradient(135deg, #f3ad04 0%, #1f2937 100%);
+  transform: translateY(-1px);
+}
+
+/* Coming Soon Section */
+.coming-soon-section {
+  margin-bottom: 3rem;
+}
+
+.coming-soon-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.coming-soon-card h3 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.coming-soon-description {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.coming-control-badge {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  display: inline-block;
+}
+
+.coming-control-badge span {
+  color: #92400e;
+  font-weight: 600;
+}
+
+/* FAQ Section */
+.faq-section {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.faq-section h3 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-item {
+  text-align: center;
+}
+
+.step-number {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #f3ad04 0%, #1f2937 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin: 0 auto 1rem;
+}
+
+.step-item p {
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Currency Info */
+.currency-info {
+  text-align: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.currency-info p {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Naira Symbol Styling */
+.naira-symbol {
+  font-weight: bold;
+  color: #1f2937;
+}

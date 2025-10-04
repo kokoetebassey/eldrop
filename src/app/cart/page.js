@@ -17,22 +17,24 @@ export default function CartPage() {
           <span className="cartpage-navbar-arrow">&lt;</span>
           <span className="cartpage-navbar-text">Continue Shopping</span>
         </Link>
-        <span className="cartpage-navbar-dots">⋯</span>
+        <span className="cartpage-navbar-dots">⋯</span> 
+        
       </div>
       </div>
       {/* Notification */}
       {notification && (
         <div className="cartpage-notification">{notification}</div>
       )}
-      <div className="cartpage-header">
-     
-        <h3>Subtotal</h3>
-        <div>
-          N{getTotalPrice().toFixed(2)}
+      {cart.length > 0 && (
+        <div className="cartpage-header">
+          <h3>Subtotal</h3>
+          <div>
+            ₦{getTotalPrice().toFixed(2)}
+          </div>
         </div>
-      </div>
+      )}
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p style={{marginTop: '30px', marginLeft: '30px'}}>Your cart is empty.</p>
       ) : (
         <div className="cartpage-list">
           {cart.map(item => (
@@ -76,6 +78,13 @@ export default function CartPage() {
           {/* <div className="cartpage-total">
             Total: ${getTotalPrice().toFixed(2)}
           </div> */}
+        </div>
+      )}
+      {cart.length > 0 && (
+        <div className="cartpage-checkout">
+          <Link href="/order-summary">
+            <button className="cartpage-checkout-btn">Checkout</button>
+          </Link>
         </div>
       )}
     </div>
