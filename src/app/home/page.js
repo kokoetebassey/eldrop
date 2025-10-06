@@ -112,11 +112,13 @@ export default function AddToCartPage() {
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
               <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}   onClick={() => router.push('/discount')}><span><FaGift /> Promo Codes</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
-              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}  onClick={() => router.push('/cart')}><span><FaClipboardList /> Orders</span> <FaChevronRight /></div>
+              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer'}}  onClick={() => router.push('/orders/track')}><span><FaClipboardList /> Track Orders</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
               <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer'}} onClick={() => router.push('/notifications')}><span><FaBell /> Notification</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
-              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}} onClick={() => router.push('/faq')}><span><FaQuestionCircle /> FAQ</span> <FaChevronRight /></div>
+              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer'}} onClick={() => router.push('/faq')}><span><FaQuestionCircle /> FAQ</span> <FaChevronRight /></div>
+             < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
+              <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer'}} onClick={() => router.push('/vendor/dashboard')}><span><FaUser /> Vendor Dashboard</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
               <div className={styles.menuItem} style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}><span><FaSignOutAlt /> Logout</span> <FaChevronRight /></div>
              < hr style={{ borderColor: '#D9D9D9', with: '100px'}} />
@@ -124,11 +126,10 @@ export default function AddToCartPage() {
             </div>
 
 
-            <div className={styles.modalProfile_vendur}>
+            <div className={styles.modalProfile_vendur} onClick={() => router.push('/vendor/dashboard')} style={{cursor:'pointer'}}>
             <div className={styles.vendur_text}>
                     <h2>Become a vendor</h2>
                     <p>Earn commissions by helping customers shop for food items in the market.</p>
-                    
           </div>
           </div>
           </div>

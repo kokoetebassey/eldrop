@@ -1,0 +1,211 @@
+.track-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.track-header {
+  background: #FFA500;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.track-header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.track-orders {
+  padding: 15px;
+}
+
+.track-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.track-status-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.track-status-bar::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: #ddd;
+  z-index: 0;
+}
+
+.status-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.status-step svg {
+  font-size: 24px;
+  color: #ddd;
+  background: white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.status-step.active svg {
+  color: #FFA500;
+}
+
+.status-step span {
+  font-size: 10px;
+  color: #999;
+  text-align: center;
+}
+
+.status-step.active span {
+  color: #FFA500;
+  font-weight: bold;
+}
+
+.track-details {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.track-info p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.track-time {
+  color: #999;
+  font-size: 12px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.empty-state button {
+  padding: 12px 30px;
+  background: #FFA500;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.track-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.rating-section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.rating-section p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 32px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star:hover,
+.star.active {
+  color: #FFD700;
+}
+
+.submit-rating {
+  padding: 10px 20px;
+  background: #FFA500;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-rating:hover {
+  background: #FF8C00;
+}
+
+.rated-text {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .track-container {
+    max-width: 100%;
+  }
+  
+  .status-step span {
+    font-size: 8px;
+  }
+  
+  .status-step svg {
+    font-size: 18px;
+  }
+  
+  .track-notification {
+    right: 10px;
+    left: 10px;
+    top: 10px;
+  }
+}

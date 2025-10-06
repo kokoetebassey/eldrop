@@ -42,15 +42,37 @@ export default function OrderSummaryPage() {
     return <div className="order-summary-container">Loading...</div>;
   }
 
+  const createOrder = async () => {
+    try {
+      const res = await fetch('/api/orders/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: cart,
+          total: getTotalPrice() + deliveryCost,
+          deliveryAddress: user.address || 'No address provided'
+        })
+      });
+      
+      if (res.ok) {
+        clearCart();
+        alert('Order placed successfully! Waiting for vendor to accept.');
+        router.push('/orders/track');
+      } else {
+        alert('Failed to create order');
+      }
+    } catch (err) {
+      alert('Error creating order');
+    }
+  };
+
   const componentProps = {
     email: user.email,
     amount,
     publicKey,
     text: 'Process Order',
     onSuccess: () => {
-      clearCart();
-      alert('Payment successful! Order processed.');
-      router.push('/home');
+      createOrder();
     },
     onClose: () => alert('Payment cancelled'),
   };
